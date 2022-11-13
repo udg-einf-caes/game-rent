@@ -10,8 +10,7 @@ public class Rental {
     private final int daysRented;
 
     double getCharge() {
-        int daysRented = getDaysRented();
-        return getGame().getCharge(daysRented);
+        return getGame().getCharge(getDaysRented());
     }
 
     int getFrequentRenterPoints() {
