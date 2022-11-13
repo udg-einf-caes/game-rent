@@ -15,17 +15,7 @@ public class Rental {
 
     int getFrequentRenterPoints() {
         int daysRented = getDaysRented();
-        return getGameFrequentRenterPoints(daysRented);
+        return getGame().getFrequentRenterPoints(daysRented);
     }
-
-    private int getGameFrequentRenterPoints(int daysRented) {
-        int result=1;
-        // add bonus for a two days new release rental
-        if ((getGame().getPriceCode() == Game.NEW_RELEASE) &&
-                daysRented > 1)
-            result++;
-        return result;
-    }
-
 
 }
