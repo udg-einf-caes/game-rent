@@ -22,7 +22,7 @@ public class Customer {
         while (rentals.hasMoreElements()) {
             Rental each = rentals.nextElement();
 
-            double thisAmount = amountFor(each);
+            double thisAmount = each.getCharge();
 
             // add frequent renter points
             frequentRentalPoints++;
@@ -42,7 +42,4 @@ public class Customer {
         return result;
     }
 
-    private double amountFor(Rental rental) {
-        return rental.getCharge();
-    }
 }
