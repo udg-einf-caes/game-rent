@@ -5,4 +5,9 @@ public class NewReleasePrice extends Price {
     public int getPriceCode() {
         return Game.NEW_RELEASE;
     }
+
+    @Override
+    double getCharge(int daysRented) {
+        return daysRented * 3;
+    }
 }
