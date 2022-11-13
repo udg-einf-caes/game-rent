@@ -33,14 +33,8 @@ public class Customer {
         result += "You earned " + String.valueOf(frequentRentalPoints) + " frequent rental points";
         return result;
     }
-
-    private int getFrequentRenterPoints(Rental each) {
-        int frequentRentalPoints=1;
-        // add bonus for a two days new release rental
-        if ((each.getGame().getPriceCode() == Game.NEW_RELEASE) &&
-             each.getDaysRented() > 1)
-            frequentRentalPoints++;
-        return frequentRentalPoints;
+    int getFrequentRenterPoints(Rental each) {
+        return each.getFrequentRenterPoints();
     }
 
 }
