@@ -14,8 +14,7 @@ public class Rental {
     }
 
     int getFrequentRenterPoints() {
-        int daysRented = getDaysRented();
-        return getGame().getFrequentRenterPoints(daysRented);
+        return getGame().getFrequentRenterPoints(getDaysRented());
     }
 
 }
