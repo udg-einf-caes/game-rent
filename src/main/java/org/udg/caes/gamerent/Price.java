@@ -1,5 +1,5 @@
 package org.udg.caes.gamerent;
 
-public interface Price {
-    int getPriceCode();
+public abstract class Price {
+    abstract int getPriceCode();
 }

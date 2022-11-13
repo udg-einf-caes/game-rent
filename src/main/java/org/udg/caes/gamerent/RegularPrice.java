@@ -1,6 +1,6 @@
 package org.udg.caes.gamerent;
 
-public class RegularPrice implements Price {
+public class RegularPrice extends Price {
     @Override
     public int getPriceCode() {
         return Game.REGULAR;
