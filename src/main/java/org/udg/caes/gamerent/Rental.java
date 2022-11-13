@@ -10,8 +10,12 @@ public class Rental {
     private final int daysRented;
 
     double getCharge() {
-        double result = 0;
         int daysRented = getDaysRented();
+        return getGameCharge(daysRented);
+    }
+
+    private double getGameCharge(int daysRented) {
+        double result = 0;
         switch (getGame().getPriceCode()) {
             case Game.REGULAR:
                 result += 2;
