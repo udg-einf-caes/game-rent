@@ -1,17 +1,39 @@
 package org.udg.caes.gamerent;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 
-@Data
-@AllArgsConstructor
 public class Game {
     public static final int REGULAR = 0;
     public static final int NEW_RELEASE = 1;
     public static final int CHILDREN = 2;
 
-    private final String title;
-    private int priceCode;
+    @Getter private final String title;
+    private Price price;
+
+    public Game(String title, int priceCode) {
+        this.title = title;
+        setPriceCode(priceCode);
+    }
+
+    public int getPriceCode() {
+        return price.getPriceCode();
+    }
+
+    public void setPriceCode(int code) {
+        switch (code) {
+            case REGULAR:
+                price = new RegularPrice();
+                break;
+            case CHILDREN:
+                price = new ChildrenPrice();
+                break;
+            case NEW_RELEASE:
+                price = new NewReleasePrice();
+                break;
+            default:
+                throw new IllegalArgumentException("Incorrect Price Code");
+        }
+    }
 
     double getCharge(int daysRented) {
         double result = 0;
