@@ -21,7 +21,7 @@ public class Customer {
         String result = "Rental Record for " + getName() + "\n";
         while (rentals.hasMoreElements()) {
             Rental each = rentals.nextElement();
-            frequentRentalPoints += getFrequentRenterPoints(each);
+            frequentRentalPoints += each.getFrequentRenterPoints();
 
             // show figures for this rental
             result += "\t" + each.getGame().getTitle() + "\t"
@@ -32,9 +32,6 @@ public class Customer {
         result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
         result += "You earned " + String.valueOf(frequentRentalPoints) + " frequent rental points";
         return result;
-    }
-    int getFrequentRenterPoints(Rental each) {
-        return each.getFrequentRenterPoints();
     }
 
 }
