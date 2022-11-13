@@ -1,4 +1,4 @@
-package org.udg.caes.stockmarket.EXAMPLE;
+package org.udg.caes.gamerent.EXAMPLE;
 
 import org.udg.caes.gamerent.Customer;
 import org.udg.caes.gamerent.Game;
